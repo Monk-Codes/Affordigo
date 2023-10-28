@@ -1,0 +1,469 @@
+//heading items
+.favicon {
+ height: 8rem;
+ margin-left: 1rem;
+}
+.search {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex: 0 0 40%;
+ @media only screen and (max-width: 31.5em) {
+  order: 1;
+  flex: 0 0 100%;
+ }
+ &__input {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: var(--grey);
+  border: none;
+  padding: 1.5rem 2rem;
+  border-radius: 100px;
+  width: 90%;
+  margin-right: -3.5rem;
+  transition: all 0.2s;
+  @media only screen and (max-width: 31.5em) {
+   padding: 2rem;
+   width: 70%;
+  }
+  &:focus {
+   width: 90%;
+   outline: none;
+   background-color: var(--grey-d);
+  }
+  &::-webkit-input-placeholder {
+   font-weight: 100;
+   color: var(--grey-dd);
+  }
+ }
+ &__btn {
+  border: none;
+  background-color: var(--grey);
+  transition: all 0.2s;
+
+  &:focus {
+   outline: none;
+  }
+  &:active {
+   transform: translateY(3px);
+  }
+ }
+ &__input:focus + &__btn {
+  background-color: var(--grey-d);
+ }
+ &__icon {
+  height: 2rem;
+  width: 2rem;
+  fill: var(--grey-dd);
+ }
+}
+.user-nav {
+ display: flex;
+ align-items: center;
+ align-self: stretch;
+ & > * {
+  padding: 0 2rem;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
+ }
+ & > *:hover {
+  background-color: var(--grey-l);
+ }
+ &__icon-box {
+  position: relative;
+ }
+ &__icon {
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-right: 0.2rem;
+  fill: var(--grey-dd);
+ }
+ &__notification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  font-size: 1rem;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-color: var(--grey-d);
+  color: white;
+  top: 3.5rem;
+  right: 0.5rem;
+ }
+ &__username {
+  color: var(--grey-dd);
+ }
+}
+
+//side bar item
+.side-nav {
+ font-size: 1.2rem;
+ list-style: none;
+ margin-top: 2rem;
+ align-items: center;
+ @media only screen and (max-width: 58em) {
+  display: flex;
+  margin: 0;
+ }
+ &__item {
+  position: relative;
+  &:not(:last-child) {
+   margin-bottom: 0.5rem;
+   @media only screen and (max-width: 58em) {
+    margin-bottom: 0;
+   }
+  }
+ }
+ &__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 2px;
+  background-color: var(--color);
+  transform: scaleY(0);
+  transition: transform 0.3s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.3s background-color 0.3s;
+ }
+ &__item:hover::before,
+ &__item--active::before {
+  transform: scaleY(1);
+  width: 100%;
+ }
+ &__item:active::before {
+  background-color: var(--grey-d);
+ }
+
+ &__link:link,
+ &__link:visited {
+  position: relative;
+  z-index: 1;
+  color: var(--color-l);
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 2.5rem;
+  display: flex;
+  align-items: center;
+
+  @media only screen and (max-width: 58em) {
+   padding: 1rem;
+   justify-content: space-evenly;
+  }
+  @media only screen and (max-width: 37.5em) {
+   flex-direction: column;
+   padding: 1.5rem 0.5rem;
+   justify-content: space-between;
+  }
+ }
+ &__icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 2rem;
+  fill: currentColor;
+  @media only screen and (max-width: 37.5em) {
+   margin-right: 0;
+   width: 1.5rem;
+   height: 1.5rem;
+  }
+ }
+}
+.legal {
+ font-size: 1.2rem;
+ color: var(--grey-dd);
+ text-align: center;
+ padding: 2.5rem;
+ @media only screen and (max-width: 58em) {
+  display: none;
+ }
+}
+.gallery {
+ display: flex;
+ &__pics {
+  width: 100%;
+  display: block;
+ }
+}
+.overview {
+ display: flex;
+ align-items: center;
+ border-bottom: 5px solid var(--color-d);
+
+ &__heading {
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1rem 2rem;
+  @media only screen and (max-width: 58em) {
+   padding: 1rem;
+   letter-spacing: 0px;
+   font-size: 1.5rem;
+   font-weight: 900;
+  }
+  @media only screen and (max-width: 37.5em) {
+   font-size: 1.2rem;
+  }
+ }
+ &__stars {
+  margin-right: auto;
+  display: flex;
+  @media only screen and (max-width: 58em) {
+   align-items: end;
+  }
+ }
+ &__icon-star,
+ &__icon-location {
+  width: 2rem;
+  height: 2rem;
+  fill: var(--color);
+ }
+
+ &__location {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+ }
+ &__rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  align-self: stretch;
+  background-color: var(--grey);
+  padding: 0 1rem;
+  color: var(--grey-dd);
+  font-weight: 800;
+  @media only screen and (max-width: 37.5em) {
+   padding: 0 1.5rem;
+  }
+ }
+ &__rating-avg {
+  font-size: 1.5rem;
+  @media only screen and (max-width: 37.5em) {
+   font-size: 1.2rem;
+  }
+ }
+ &__rating-count {
+  font-size: 1.2rem;
+  @media only screen and (max-width: 37.5em) {
+   font-size: 1rem;
+  }
+ }
+}
+.btn-inline {
+ border: none;
+ color: var(--color);
+ font-size: 1.5rem;
+ padding-bottom: 2px;
+ display: inline-block;
+ background-color: transparent;
+ margin-right: 1rem;
+ margin-top: 0.5rem;
+ cursor: pointer;
+ transition: all 0.3s;
+ &span {
+  margin-left: 3px;
+  transition: margin-left 0.2s;
+ }
+ &:hover {
+  color: var(--grey-dd);
+  span {
+   margin-left: 8px;
+  }
+ }
+ &:focus {
+  outline: none;
+  animation: pulse 1s infinite;
+ }
+}
+@keyframes pulse {
+ 0% {
+  transform: scale(1);
+  box-shadow: none;
+ }
+ 50% {
+  transform: scale(1.01);
+  box-shadow: 0 1rem 4rem rgba($color: #00000f, $alpha: 0.4);
+ }
+ 100% {
+  transform: scale(1);
+  box-shadow: none;
+ }
+}
+//content
+.paragraph:not(:last-of-type) {
+ margin-bottom: 1rem;
+}
+.list {
+ list-style: none;
+ margin: 3rem 0;
+ padding: 3rem 0;
+ border-top: 1px solid var(--grey);
+ border-bottom: 1px solid var(--grey);
+ display: flex;
+ flex-wrap: wrap;
+ &__item {
+  flex: 0 0 50%;
+  margin-bottom: 0.5rem;
+ }
+ &__item::before {
+  content: "";
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  margin-right: 0.7rem;
+  background-color: var(--color-btn);
+  -webkit-mask-image: url(../img/chevron-thin-right.svg);
+  -webkit-mask-size: cover;
+  mask-image: url(../img/chevron-thin-right.svg);
+  mask-size: cover;
+ }
+}
+.recommend {
+ font-size: 1.2rem;
+ color: var(--grey);
+ display: flex;
+ align-items: center;
+ box-sizing: border-box;
+ &__count {
+  margin-right: auto;
+ }
+ &__frnds {
+  display: flex;
+ }
+ &__pic {
+  box-sizing: content-box;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  &:not(:last-child) {
+   margin-right: -2.25rem;
+  }
+ }
+}
+.review {
+ background-color: white;
+ overflow: hidden;
+ position: relative;
+ box-shadow: 0 1rem 1rem rgba($color: #00000fd2, $alpha: 0.4);
+ padding: 1rem;
+ margin-bottom: 2rem;
+ @media only screen and (max-width: 58em) {
+  padding: 2rem;
+  margin-bottom: 3rem;
+ }
+ &__text {
+  z-index: 10;
+  position: relative;
+  margin-bottom: 2rem;
+  color: var(--grey-dd);
+ }
+ &__user {
+  display: flex;
+  align-items: center;
+ }
+ &__pic {
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+ }
+ &__user-box {
+  margin: auto;
+ }
+ &__username {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+ }
+ &__userdate {
+  font-size: 1rem;
+  color: var(--grey-dd);
+ }
+ &__rating {
+  color: var(--color-d);
+  font-size: 1.2rem;
+  font-weight: 800;
+ }
+ &::before {
+  color: var(--grey-l);
+  content: "\201C";
+  position: absolute;
+  line-height: 1;
+  top: -1rem;
+  left: -0.5rem;
+  font-size: 10rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  z-index: 1;
+ }
+}
+.cta {
+ padding: 3.5rem 0;
+ text-align: center;
+ &__book-now {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  @media only screen and (max-width: 58em) {
+   margin-bottom: 0;
+  }
+ }
+ @media only screen and (max-width: 58em) {
+  padding: 1rem 0;
+ }
+}
+.btn {
+ position: relative;
+ font-size: 1.5rem;
+ margin: 20px 30px;
+ font-weight: 300;
+ text-transform: uppercase;
+ border-radius: 100px;
+ border: none;
+ background-image: linear-gradient(to right, var(--color), var(--color-d));
+ color: white;
+ overflow: hidden;
+ cursor: pointer;
+ @media only screen and (max-width: 58em) {
+  margin: 0 auto;
+  font-size: 1rem;
+ }
+
+ & > * {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  transition: all 0.2s;
+ }
+ &__visible {
+  padding: 2rem 3rem;
+ }
+ &__hidden {
+  position: absolute;
+  padding: 2rem 0;
+  left: 0;
+  top: -100%;
+ }
+ &:hover {
+  background-image: linear-gradient(to left, var(--color), var(--color-d));
+ }
+ &:hover &__visible {
+  transform: translateY(100%);
+ }
+
+ &:hover &__hidden {
+  top: 0;
+ }
+ &:focus {
+  outline: none;
+  animation: pulse 1s infinite;
+ }
+}
