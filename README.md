@@ -1,3 +1,3 @@
 # Affordigo
 ## simple Booking website
-- [Live Demo - Desktop Version](https://affordigo.netlify.app/)
+- [Live Demo](https://affordigo.netlify.app/)
