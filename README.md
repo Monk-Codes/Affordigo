@@ -4,7 +4,7 @@
 <br/>
 <p align="center">
   <a href="https://github.com/MonkCodes/Affordigo">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+<img src="logo.png" alt="image" width="500" height="300">
   </a>
 
   <h3 align="center">Affordigo</h3>
@@ -32,13 +32,12 @@
 * [Built With](#built-with)
 * [Getting Started](#getting-started)
 * [Roadmap](#roadmap)
-* [Contributing](#contributing)
 * [Authors](#authors)
 * [Acknowledgements](#acknowledgements)
 
 ## About The Project
 
-![Screen Shot](https://affordigo.netlify.app/)
+![Screenshot (25)](https://github.com/Monk-Codes/Affordigo/assets/84877191/18d1ed1e-1408-493e-bacb-6dd0041689a9)
 
 There are many great Booking sites available on GitHub, however, I didn't find one that really suit my needs so I created this .This project is still in WIP.
 
